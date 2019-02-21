@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html>
 <script async src="./javascript/index.js"></script>
-  <head>
-    <title>My webpage!</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-    <h4 id='date'></h4>
-    
+
+<head>
+  <title>Just a simple testpage!</title>
+
+  <script language="javascript" type="text/javascript">
+    function windowClose() {
+      window.open('', '_parent', '');
+      window.close();
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Testing out different close window approaches!</h1>
+  <h4 id='date'></h4>
+
+  <p>
+    <h3>Close dialects</h3>
     <button type="button" onclick="window.open('', '_self', ''); window.close();">Close 1</button>
-    
+
     <button onclick="self.close()">Close 2</button>
-    
-    <input type="button" id="cancel_edit" value="Close 3"></input>
-    
+
+    <input type="button" value="Close 3" onclick="windowClose();">
+
+    <h3>Back dialects</h3>
     <button onclick="goBack()">Back 1</button>
-    
-    <input name="action" type="submit" value="Back 2" onclick="window.history.back();"/>
+
+    <input name="action" type="submit" value="Back 2" onclick="window.history.back();" />
+
     <a href="javascript: history.go(-1)">Go Back 3</a>
-    
-    <a href="##" onClick="history.go(-1); return false;">Go back 4</a> 
-    
-    <button onclick="history.go(-1);">Go back 5</button>
-    
+
+    <a href="##" onClick="history.go(-1); return false;">Go back 4</a>
+
+    <button onclick="history.go(-1);">Go back </button>
+  </p>
+
+  <h3>Start app</h3>
+  <p>
     <a href="bankid:///?autostarttoken=[TOKEN]&redirect=[RETURNURL]">bankid 1</a>
 
     <a href="bankid:///?autostarttoken=123123123&redirect=www.vk.se">bankid 2</a>
+  </p>
 
-    <a href="swedbank:///?autostarttoken=123123123&redirect=www.vk.se">swedbank 1</a>
+</body>
 
-<script>
-function goBack() {
-  window.history.back();
-}
-</script>
-  </body>
 </html>
